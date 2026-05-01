@@ -104,6 +104,20 @@ A menudo es mejor, haceer commits pequenios, agrupando peuqnias m,ejoas o accion
     * style: para cambios de formato, tabulaciones espacion o punto y coma, etc, no afectan al ususario 
     *test: para tests o refactorixacion de uno ya existente 
 5. Aniado todo el contexto que sea necesario en el cuerpo del commit
-```
-git commit -m “<tipo de prefijo>: <verbo imperativo descripción>”
-```
+    ```
+    git commit -m “<tipo de prefijo>: <verbo imperativo descripción>”
+    ```
+
+# Clase 3 GITHUB Y SSH
+
+## Que es Github?
+Github es una plataforma en la nube y red social para desarrolladores que permite alojar, gestionar y colaborar en  proyectos de software utilizando git.
+
+## Git vs Github 
+Git es el; sistema de control de versiones que crea los puntos de guardado, y github es el servidor donde esos puntos se almacenan y se socializan con el mundo, Github usa GIt mas no son lo mismo
+
+## SSH vs HTTPS
+### HTTPS 
+Cuando clonamos y queremos usar un repositorio con https, este n os pedira autentiocarnos cada vez, hasta pindiendo un token. lo cual hace que sea cansado y molesto.
+### SSH
+Configuramos nuestra ps/laptop ssh para comunicarnos con github, mediante un key la cual al ponerla en github no necesitara pedirnos autenticarnos cada vez
