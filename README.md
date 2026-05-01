@@ -263,3 +263,57 @@ git commit
 [Ctrl + O, Enter, Ctrl + X](depende si usan nano)
 git branch -D rama
 git push origin develop
+
+# Clase 7
+
+## ¿Qué son los Pull Request?
+También informalmente llamados (PRs), es la forma profesional de trabajar con git/github,
+crea un request en el grupo del repositorio en github que permite ver que se quiere mergear
+o unir al código base que ya se tiene.
+## ¿Cómo crear un PR?
+Para ello primero una vez que hagas git push origin rama debes dirigirte a github.com y
+seguir los pasos del siguiente tutorial
+https://youtu.be/4CeMKqloOJc
+
+## Flujo de trabajo (Con Pull Requests)
+git checkout develop
+git fetch
+git pull origin develop
+git checkout rama # Agregas -b si estás creando la rama
+git merge develop # Solo si hubo cambios en develop
+###### Trabajas en tu rama
+git push origin rama # Agregas -u si es la primera vez que subes cambios al repositorio
+remoto
+git checkout develop
+git fetch
+git checkout rama
+git merge develop # Solo si hubo cambios en develop antes de hacer la PR
+###### Resuelves manualmente los archivos fallidos y sus conflictos
+git add .
+git commit
+[Ctrl + O, Enter, Ctrl + X](depende si usan nano)
+git push origin rama
+###### Sigues el flujo mostrado en “¿Cómo crear un PR?
+
+
+## ¿Por qué usamos los PRs sí ya podemos trabajar normalmente sin ellos?
+Los usamos por temas de seguridad, que cualquier colaborador pueda tocar nuestro
+repositorio y mergear sin preguntar o avisar es un riesgo constante, ¿Y si lo hace mal? ¿Y si
+está metiendo código malicioso? ¿Y si es un norcoreano intentando hackearme que solo se
+ganó mi confianza? ¿Qué código está pusheando?
+
+Los PRs permite al equipo y lo fuerza a ver los cambios, limita la colaboración y obliga al
+debate y deliberación. Nos permite entender que vamos a poner en marcha, quien lo hara,
+presentar una opinión u oponerse al cambio, los PRs nos permiten un mejor manejo grupal
+de nuestro repositorio en equipo
+
+## ¿Cómo proteger mi repositorio y limitar la colaboración?
+Bien, ya sabemos la importancia de los PRs pero aun así, no hemos limitado nada,
+seguimos confiando en que nuestros colaboradores esperaran nuestra review y aprobación
+para unir su código, pero aún pueden hacerlo, porque no los hemos limitado, para eso lo
+que debemos hacer es lo que se detalla en el siguiente video corto:
+https://youtu.be/ZdLomug2-UQ
+
+## ¿Cómo colaboro al proyecto si no soy un colaborador invitado?
+En la clase nuestro querido postulante Andre colaboró sin estar invitado en nuestro
+repositorio sin estar invitado, esto es posible y nos lo explica él mismo
