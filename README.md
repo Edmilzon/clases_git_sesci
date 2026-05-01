@@ -169,3 +169,49 @@ git checkout -b rama_nueva
 * No trabajes mucho tiempo den Detached HEAD
 * Limpia tu directorio de trabajo 
 * Usalo para aprender 
+
+# Clase 5 Ramas y gitflow basico 
+
+## Que son las ramas? 
+Las ramas son una de las principales utilidades que disponemos en git para llevar un mejor control de codigo, Se trata de una bifurcacion del estado del codigo que crea un nuevo camino de cada a la evolucion del codigo en paralelao a otras ramas que se puedan generar 
+
+## Branch 
+  git branc es un comando q nos permite gestionar las ramas que tiene o tendra nuetra proyecto, esto en base a distintos comandos 
+
+  ```
+  git branch -> lista las ramas disponibles y nuetro posicionaminto actual de nuestro HEAD
+
+  git branch <rama> -> Crea una rama a partir de la rama en la que etsamos posicionamos
+
+  git branch -D <rama> -> borra la rama
+  ```
+## Git checkout enfocado en ramas
+Si bien lo suamos preciemnte para ver nuestros archivos pasados mediante los commits, tambien puede ser usado junto con las ramas 
+```
+git checkout <rama> -> cambia de rama (todo tiene q estar comiteado para esto )
+git checkout -b <rama> -> crea la rama y te mueve a ella 
+```
+
+## Git checkout vs git switch 
+##### Por que existen ambos ?
+Originalemnte, git checkout estaba sobrecargado: servia para cambiar de rama, viajar a comits antoguos y restaurar archivos. En 2028 se introdujo git switch para separar la navegacion de ramas del resto de funciones, haciendo un flujo mas seguro e intuitivo 
+
+git checkout es multiproposito pero puede derate en Detached HEAD facilmente, es el comando clasico y universal. Git switch esta especializado unicamente en ramas y evita errores accedentales al moverte, es el comando moderno desde 2019
+
+## Git flow basico 
+### Que es ?
+Es un flujo de trabajko (workflow) el cual no9s permite trabajar de manera ordenada nuestras ramas, pues atravez de ciertas consginas y reglas establecidasm nos permite trabajar ordenadamente con ramas, versiones, y permite una facil adaptacion para cualquiera que quiera aportar en nuestro proyecto, muy util sibre todo en SCESI 
+![flujo de gitflow](resource/image/image.png)
+
+### Como funciona gitflow?
+
+* ###### Main 
+Como siempre hasta ahora tenemos la rama main la cual es la que tenemos por defecto al crear un repositorio de git, el proposito de esta rama es contener el codigo que se encuentra en produccion 
+* ###### develop 
+Es la rama de pre-produccion. Su proposito es tener las caracteristicas que sen probando mas todavia no han sido validadoes del todo, pero que seran lanzadas a produccion pronto. Es donde mas trabajaran a lo largo del proyecto 
+* ###### Ramas de apoyo 
+Son ramas que nos permitiras escribir nuestro codigo y estas pueden ser feature release y hotfix 
+
+  * feature : Caundo trabajas en una nueva caracteristica para el proyecto. Estas ramas se crean a partir de la rama develop
+  * realease Cuando preparas el lanzamiento de una nueva version. Es en teoria donde se hace pruebas de (QA) se crean en develop y se fusionana en develop o main 
+  * Hotfix: para trabajar en cambios improvistos como parques para arreglar un bug o un problema en producccion
