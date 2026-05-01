@@ -121,3 +121,51 @@ Git es el; sistema de control de versiones que crea los puntos de guardado, y gi
 Cuando clonamos y queremos usar un repositorio con https, este n os pedira autentiocarnos cada vez, hasta pindiendo un token. lo cual hace que sea cansado y molesto.
 ### SSH
 Configuramos nuestra ps/laptop ssh para comunicarnos con github, mediante un key la cual al ponerla en github no necesitara pedirnos autenticarnos cada vez
+
+# Clase 4 Remote SSH Multiple y checkout 
+## Git remote 
+  Git remote: es el comando que nos permite gestionar nuestras coneccinexiones con los rempositoprios remotos, le dice a git local donde enviar o de donde traer la informacion, algunos comando utile son 
+  * git remote -v (Nos permite ver las URLs exactas donde
+  apunta nuestro repositorio)
+  * git remote add <apodo> “url” (Vincula nuestro repo local
+  con uno en la nube.)
+  * git remote set-url <apodo> “url” (Cambia la url donde
+  apunta nuestro repositorio)
+
+## Mutioples SSH 
+Si tenemos mas de una cuenta de github o necesitamos tener otras cuentas es util tener mas de una llave ssh, pues esa no da acceso a cada cuenta, es un tunel, pero cada cuenta necesita su tunelpara que estos no choquen.
+
+Es cmo tener una lalve para cada puerta, una no abre otra, su unba llave abre multiples puertas quiza deberiamos reconsiderar los cerrojos
+
+## Git Checkout 
+Es el comando que nos permite desplazarnos el HEAD hacia un punto especifico de la historia o una raman distinta 
+
+### Para que sirve? 
+* inspecciones: ver como era el codigo en un comit antiguo 
+* Restaurar: recuperar archivos que borramos o cambiamos
+* Experimentar: Probar cambios sin arruinar la rama principal 
+* Cambiar: Saltarnos de una rama a otra 
+
+### El estado "Detached HEAD" 
+Normalmente, el HEAD apunta a una Rama( que se mueve), EN este estado desacoplado, El HED apunta directamente a un commit (que sea fijo)
+
+###### Que queire decir ?
+* Eres un espectador en el pasado 
+* Puedes ver todo y escribir notas, pero no tienes el cuero 
+* Si te vas al presenta sin encarnar en una rama tus cambios se pierden en el vacio 
+
+#### Como ir y volver de un commit?
+```
+git checkout <hash_antiguo> -> para ir atras
+
+git checkout <rama> -> para volver al ultimo hash de la rama
+
+Si hiciste algo aca (como un commit)
+git checkout <hash_commit_creado>
+git checkout -b rama_nueva
+```
+
+## Buenas practicas 
+* No trabajes mucho tiempo den Detached HEAD
+* Limpia tu directorio de trabajo 
+* Usalo para aprender 
